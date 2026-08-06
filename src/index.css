@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { -webkit-tap-highlight-color: transparent; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-navy-950 text-ink-100 font-sans antialiased;
+    overscroll-behavior-y: none;
+  }
+  .safe-top { padding-top: env(safe-area-inset-top); }
+  .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  .max-w-app { max-width: 672px; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-navy-900/80 backdrop-blur-xl border border-white/5;
+  }
+  .surface {
+    @apply bg-navy-900 border border-white/5;
+  }
+  .skeleton {
+    @apply bg-gradient-to-r from-navy-800 via-navy-700 to-navy-800 bg-[length:200%_100%] animate-shimmer rounded-2xl;
+  }
+}
